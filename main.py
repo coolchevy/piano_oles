@@ -12,7 +12,6 @@ PicButton, що спадкує по класу QAbstractButton (він є окр
 змінювати лише "клавішу" c_note.
 '''
 
-
 import winsound, sys
 
 from PyQt4 import QtCore, QtGui
@@ -42,7 +41,9 @@ class Ui_Form(QtGui.QWidget):
     def setupUi(self, Form):
         Form.resize(600, 600)
         ###
+        layout = QHBoxLayout(Form)
         self.c_note = PicButton(QtGui.QPixmap("images/C.png"), QtGui.QPixmap("images/C_mouse.png"), QtGui.QPixmap("images/C_on.png"))
+        layout.addWidget(self.c_note)
         ###
         self.d_note = QtGui.QPushButton(Form)
         self.d_note.setGeometry(QtCore.QRect(90, 20, 75, 441))
